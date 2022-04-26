@@ -1,0 +1,50 @@
+{
+	"name": "ext-all-extensions",
+	"displayName": "ext-all-extensions",
+	"publisher": "aeschli",
+	"description": "",
+	"version": "0.0.2",
+	"engines": {
+		"vscode": "^1.66.0"
+	},
+	"enabledApiProposals": [
+		"extensionsAny"
+	],
+	"categories": [
+		"Other"
+	],
+	"activationEvents": [
+		"onCommand:ext-all-extensions.showExtensions"
+	],
+	"main": "./out/extension.js",
+	"browser": "./out/extension.js",
+	"contributes": {
+		"commands": [
+			{
+				"command": "ext-all-extensions.showExtensions",
+				"title": "Print Extension Infos"
+			}
+		]
+	},
+	"scripts": {
+		"vscode:prepublish": "npm run compile",
+		"compile": "tsc -p ./",
+		"watch": "tsc -watch -p ./",
+		"pretest": "npm run compile && npm run lint",
+		"lint": "eslint src --ext ts",
+		"test": "node ./out/test/runTest.js"
+	},
+	"devDependencies": {
+		"@types/vscode": "^1.66.0",
+		"@types/glob": "^7.2.0",
+		"@types/mocha": "^9.1.0",
+		"@types/node": "14.x",
+		"@typescript-eslint/eslint-plugin": "^5.16.0",
+		"@typescript-eslint/parser": "^5.16.0",
+		"eslint": "^8.11.0",
+		"glob": "^7.2.0",
+		"mocha": "^9.2.2",
+		"typescript": "^4.5.5",
+		"@vscode/test-electron": "^2.1.3"
+	}
+}
